@@ -3,11 +3,11 @@
   "version": "0.0.1",
   "main": "index.js",
   "scripts": {
-    "dev": "vercel dev",
+    "dev": "nodemon",
     "test": "jest --detectOpenHandles",
     "serve": "nodemon dist/src",
     "build": "rimraf ./build && tsc --build",
-    "start": "vercel start"
+    "start": "npm run build && node build/src/index.js | npx pino-pretty -t SYS:yyyy-mm-dd,HH:MM:ss"
   },
   "author": "rodrigo",
   "license": "ISC",
